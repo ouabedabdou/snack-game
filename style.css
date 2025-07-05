@@ -1,0 +1,90 @@
+
+    body {
+      background-color: black;
+      color: lime;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+    }
+    canvas {
+      background-color: black;
+      display: block;
+      margin: 0 auto;
+      border: 2px solid lime;
+    }
+    #controls {
+      margin-top: 20px;
+    }
+    select, button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    #difficulty {
+      direction: rtl;
+    }
+    #playBtn {
+      font-size: 22px;
+      padding: 10px 20px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 10px;
+    }
+    .message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 36px;
+      display: none;
+      font-weight: bold;
+    }
+    #gameOver { color: red; }
+    #newTopScore {
+      color: yellow;
+      font-size: 24px;
+      margin-top: 60px;
+      display: none;
+    }
+    .blink { animation: blink 0.5s step-start 0s infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    #volumeContainer {
+      position: absolute;
+      top: 200px;
+      left: 450px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #volumeControl {
+      writing-mode: bt-lr;
+      transform: rotate(270deg);
+      height: 250px;
+    }
+    #colorBtn {
+      position: absolute;
+      top: 120px;
+      right: 250px;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    #blueBarContainer {
+      position: absolute;
+      top: 180px;
+      right: 200px;
+      width: 160px;
+      height: 15px;
+      border: 2px solid blue;
+      background-color: #000;
+      overflow: hidden;
+    }
+    #blueProgressBar {
+      height: 100%;
+      width: 100%;
+      background-color: rgb(0, 0, 255);
+    }
+ 
