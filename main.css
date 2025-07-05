@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    overflow: hidden;
+    background: #87ceeb;
+    font-family: Arial, sans-serif;
+  }
+  #game {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('assets/Flux_Dev_A_vibrant_and_detailed_platformer_game_background_fea_3.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .world {
+    position: absolute;
+    height: 100%;
+    width: 999999px;
+  }
+  .ground {
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    background: #228B22;
+    width: 100%;
+  }
+  .platform {
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    background: #8B4513;
+  }
+    .player {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background-image: url('assets/Default_A_vibrant_colorful_illustration_of_Mario_the_iconic_pl_0_7372c671-ebf7-4b79-8277-35327b8ccbf0_0.png');
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    top: 0;
+    display: none;
+  }
+
+
+  #explosionImage {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    display: none;
+    z-index: 20;
+    pointer-events: none;
+  }
+  .coin {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: gold;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+  }
+  #startBtn {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    padding: 12px 30px;
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+  }
+  #gameOverText {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: white;
+    display: none;
+    z-index: 10;
+    text-shadow: 2px 2px 5px black;
+  }
+  #scoreBoard, #coinCounter {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+  }
+  #scoreBoard { left: 10px; }
+  #coinCounter { right: 10px; color: yellow; }
+
+ #controls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+#leftRightControls {
+  display: flex;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+#leftBtn, #rightBtn {
+  width: 80px;
+  height: 150px;
+  font-size: 65px;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+
+#jumpBtn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 16px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  pointer-events: auto;
+}

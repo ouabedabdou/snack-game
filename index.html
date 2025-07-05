@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Snake Game</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Endless Mario</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <h1>Snake Game</h1>
-  <canvas id="gameCanvas" width="400" height="400"></canvas>
-  <div id="info">
-    <p>Top Score: <span id="topScore">0</span></p>
-    <p>Lowest Score: <span id="lowestScore">0</span></p>
-    <p>Points: <span id="score">0</span></p>
-  </div>
-  <div id="controls">
-    <select id="difficulty">
-      <option value="easy">سهل</option>
-      <option value="medium">متوسط</option>
-      <option value="hard">صعب</option>
-    </select>
-    <button id="playBtn">Play</button>
-    <input type="color" id="colorPicker" style="display:none;">
-    <button id="rgbToggleBtn">ON</button>
-  </div>
-  <div id="volumeContainer">
-    <div style="margin-bottom: -50px; font-size: 22px;">🔊</div>
-    <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
-  </div>
-  <button id="colorBtn">Color</button>
-  <div id="blueBarContainer" style="display:none;">
-    <div id="blueProgressBar"></div>
-  </div>
-  <div id="gameOver" class="message">Game Over</div>
-  <div id="newTopScore">New Top Score!</div>
+  <div id="game">
+    <div class="world" id="world">
+        <div class="ground"></div>
+        <div class="player" id="player"></div>
+    </div>
+    <img id="explosionImage" src="assets/explosion.png" />
+    <div id="gameOverText">Game Over</div>
+    <button id="startBtn">Play</button>
+    <div id="scoreBoard">Points: 0</div>
+    <div id="coinCounter">Coins: 0</div>
 
-  <!-- الأصوات -->
-  <audio id="gameOverSound" src="382310__mountain_man__game-over-arcade.wav"></audio>
-  <audio id="eatSound" src="20279__koops__apple_crunch_16.wav"></audio>
-  <audio id="greenEatSound" src="green_eat.wav"></audio>
-  <audio id="blueAppearSound" src="400697__daphne_in_wonderland__messenger-notification-sound-imitation.wav"></audio>
+    <!-- صوت العملة -->
+    <audio id="coinSound" src="assets/483507__dominikbraun__coins-2.mp3" preload="auto"></audio>
 
-  <script src="script.js"></script>
+    <!-- صوت القفز -->
+    <audio id="jumpSound" src="assets/262893__kwahmah_02__videogame-jump.wav" preload="auto"></audio>
+
+    <!-- صوت الانفجار -->
+    <audio id="explosionSound" src="assets/381686__stumpbutt__retro-explosion-sfx.wav" preload="auto"></audio>
+  </div>
+  <!-- أزرار التحكم -->
+<div id="controls">
+  <div id="leftRightControls">
+    <button id="leftBtn">←</button>
+    <button id="rightBtn">→</button>
+  </div>
+  <button id="jumpBtn">JUMP</button>
+</div>
+
+  <script src="main.js"></script>
 </body>
 </html>
